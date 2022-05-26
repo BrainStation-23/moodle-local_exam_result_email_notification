@@ -1,0 +1,76 @@
+<div class="card">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Open Time</th>
+            <th>Close Time</th>
+            <th>Status</th>
+            <th>Final Report</th>
+            <th>Participants</th>
+            <th>Mail Delivered</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#quizzes}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{name}}</td>
+                {{#timeopen}}
+                    <td>{{#userdate}} {{timeopen}}, {{#str}} strftimedate, core_langconfig {{/str}} {{/userdate}}</td>
+                {{/timeopen}}
+                {{^timeopen}}
+                    <td></td>
+                {{/timeopen}}
+                <td>{{#userdate}} {{timeclose}}, {{#str}} strftimedate, core_langconfig {{/str}} {{/userdate}}</td>
+                <td>
+                    {{#status}}
+                        <label class="badge badge-primary">Enable</label>
+                    {{/status}}
+                    {{^status}}
+                        <label class="badge badge-danger">Disabled</label>
+                    {{/status}}
+                </td>
+                <td>
+                    {{#reportemailstatus}}
+                        <label class="badge badge-primary">Delivered</label>
+                    {{/reportemailstatus}}
+                    {{^reportemailstatus}}
+                        <label class="badge badge-warning">Not Delivered</label>
+                    {{/reportemailstatus}}
+                </td>
+                <td>
+                    {{total_participants}}
+                </td>
+                <td>
+                    {{mail_sent}}
+                </td>
+                <td>
+                    <a class="btn btn-sm btn-info"
+                       href="/local/exam_result_email_notification/scheduleform.php?id={{id}}&course_id={{course_id}}">
+                    {{#status}}
+                        <i class="fa fa-pencil"></i>
+                    {{/status}}
+                    {{^status}}
+                        <i class="fa fa-plus"></i>
+                    {{/status}}
+                    </a>
+                    {{#status}}
+                        <a class="btn btn-sm btn-danger delete"
+                           href="/local/exam_result_email_notification/scheduleform.php?id={{id}}&course_id={{course_id}}&action=delete"
+                        onclick="if(!confirm('Do you Want to Proceed?')){return false;}" >
+                        <i class="fa fa-trash"></i>
+                        </a>
+                    {{/status}}
+
+                </td>
+            </tr>
+        {{/quizzes}}
+        </tbody>
+    </table>
+    {{^quizzes}}
+        <div class="card-body"><p>There are no results</p></div>
+    {{/quizzes}}
+</div>

@@ -1,0 +1,28 @@
+<div class="card">
+    <table class="table table-bordered">
+        <caption>Total Applicants: {{totalparticipants}}</caption>
+        <thead>
+        <tr>
+            <th>S/N</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone 1</th>
+            <th>Phone 2</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#data}}
+            <tr>
+                <td>{{sn}}</td>
+                <td>{{name}}</td>
+                <td>{{email}}</td>
+                <td>{{phone1}}</td>
+                <td>{{phone2}}</td>
+            </tr>
+        {{/data}}
+        </tbody>
+    </table>
+    {{^data}}
+        <div class="card-body"><p>Sorry !!! No Applicant found.</p></div>
+    {{/data}}
+</div>

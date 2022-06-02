@@ -11,7 +11,7 @@ emails the Final report of the Quiz to a specific Admin/Teacher/user.
 
 ## Prerequisites
 
-- Moodle >= 3.11
+- Moodle >= 3.8.9
 - PHP >= 7.3
 
 ## Installing via uploaded ZIP file ##
@@ -44,7 +44,14 @@ You will get it from Site administration/Plugins/Local plugins
 ![image](https://user-images.githubusercontent.com/38932580/170028959-89d6d203-1639-47bf-86f7-8ad3a9bc7a5f.png)
 ![image](https://user-images.githubusercontent.com/38932580/170029128-db8ac860-e556-4e5f-bbe2-c466778254bb.png)
 
-A list of Quiz test would be available to get the Exam email notification.
+You may get a page like below
+![image](https://user-images.githubusercontent.com/38932580/171610108-494fb9b8-e719-4c98-982c-60fc81315f54.png)
+
+Please make sure that you have a certain QUIZ that enables closing time & minimum passing grade of 1.0. You may check the image below to ensure the settings of QUIZ.
+
+![image](https://user-images.githubusercontent.com/38932580/171610765-a15bddef-45ed-48b5-bba5-31445dd6224d.png)
+
+After that, A list of Quiz test would be available to get the Exam email notification.
 
 ![image](https://user-images.githubusercontent.com/38932580/170029453-ded6f01c-48d7-4f1a-938f-a185a4e1bce6.png)
 
@@ -108,7 +115,7 @@ php vendor/bin/phpunit --testsuite=local_exam_result_email_notification_testsuit
 
 ## License ##
 
-2022 @Brain Station 23
+2022 Brain Station 23
 
 This program is free software: you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software

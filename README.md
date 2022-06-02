@@ -82,6 +82,9 @@ Please don't forget to complete the Setup of **Outgoing mail configuration**
 php admin/cli/scheduled_task.php --execute=\local_exam_result_email_notification\task\cron_task
 ```
 
+## Caution
+In case of Local PC or Localhost, you have to execute the Cron job manually using the above cli command.
+
 <!-- CONTRIBUTING -->
 
 ## Contributing

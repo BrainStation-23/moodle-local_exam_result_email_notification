@@ -17,9 +17,10 @@
 /**
  * This file keeps track of upgrades to the exam_result_email_notification plugin
  *
- * @package     local_exam_result_email_notification
- * @copyright   2022 @Brain Station 23
- * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    local_exam_result_email_notification
+ * @author     Brainstation23
+ * @copyright  2022 Brain Station 23
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**

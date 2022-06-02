@@ -21,8 +21,9 @@ use local_exam_result_email_notification\task\cron_task;
 /**
  * Test case for the lang of local_exam_result_email_notification plugin.
  *
- * @copyright  2022 Brain Station 23
+ * @package    local_exam_result_email_notification
  * @author     Brainstation23
+ * @copyright  2022 Brain Station 23
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class lang_test extends basic_testcase {

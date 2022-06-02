@@ -17,9 +17,10 @@
 /**
  * Exam result email scheduling form submission file.
  *
- * @package     local_exam_result_email_notification
- * @copyright   2022 @Brain Station 23
- * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    local_exam_result_email_notification
+ * @author     Brainstation23
+ * @copyright  2022 Brain Station 23
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 require_once('../../config.php');
@@ -57,7 +58,9 @@ $toform = [];
 
 // Form processing and displaying is done here.
 if ($mform->is_cancelled()) {
-    redirect("$CFG->wwwroot/local/exam_result_email_notification", get_string('form:cancel', 'local_exam_result_email_notification'), 10,
+    redirect("$CFG->wwwroot/local/exam_result_email_notification",
+        get_string('form:cancel', 'local_exam_result_email_notification'),
+        10,
         \core\output\notification::NOTIFY_WARNING);
 } else if ($fromform = $mform->get_data()) {
     // In this case you process validated data. $mform->get_data() returns data posted in form.

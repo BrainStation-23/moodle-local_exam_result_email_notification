@@ -17,9 +17,10 @@
 /**
  * Language file for the plugin.
  *
- * @package     local_exam_result_email_notification
- * @copyright   2022 @Brain Station 23
- * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    local_exam_result_email_notification
+ * @author     Brainstation23
+ * @copyright  2022 Brain Station 23
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
 
@@ -29,6 +30,7 @@ $string['pageheading'] = 'Exam Result Email Schedule Setup';
 $string['scheduleform'] = 'Schedule form';
 $string['enable'] = 'Enable';
 $string['disable'] = 'Disable';
+$string['no_result'] = 'There is no quiz. Please Make sure your QUIZ consists of Closing time & Minimum grade 1.';
 $string['quiz_result_mail'] = 'Quiz Result Mail';
 $string['exam_result_email_notification:admin'] = 'Permission';
 $string['form:status'] = 'Status';
@@ -50,5 +52,6 @@ $string['update_email_scheduling_success'] = 'Email Scheduling Has been updated 
 $string['form:mail_subject_is_required'] = 'Mail Subject is Required.';
 $string['form:remove_email_scheduling'] = 'Email Scheduling Has been removed successfully.';
 $string['form:cancel'] = 'Form Submission Cancelled.';
+$string['permission_not_found'] = 'You do not have permission to view this page.';
 $string['privacy:metadata'] = 'The Exam result email notification plugin does not store any personal data.';
 

@@ -19,8 +19,9 @@ namespace local_exam_result_email_notification\privacy;
 /**
  * Privacy Subsystem implementation for local_exam_result_email_notification.
  *
- * @copyright  2022 Brain Station 23
+ * @package    local_exam_result_email_notification
  * @author     Brainstation23
+ * @copyright  2022 Brain Station 23
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

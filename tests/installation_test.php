@@ -19,8 +19,9 @@ namespace exam_result_email_notification\tests;
 /**
  * Test case after local_exam_result_email_notification plugin installation.
  *
- * @copyright  2022 Brain Station 23
+ * @package    local_exam_result_email_notification
  * @author     Brainstation23
+ * @copyright  2022 Brain Station 23
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class installation_test extends \basic_testcase {

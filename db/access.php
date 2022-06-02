@@ -17,9 +17,10 @@
 /**
  * Plugin capabilities are defined here.
  *
- * @package     local_exam_result_email_notification
- * @copyright   2022 @Brain Station 23
- * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    local_exam_result_email_notification
+ * @author     Brainstation23
+ * @copyright  2022 Brain Station 23
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
 

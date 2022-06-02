@@ -17,9 +17,10 @@
 /**
  * Index page functions are defined here.
  *
- * @package     local_exam_result_email_notification
- * @copyright   2022 @Brain Station 23
- * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    local_exam_result_email_notification
+ * @author     Brainstation23
+ * @copyright  2022 Brain Station 23
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 require_once('../../config.php');
@@ -31,8 +32,9 @@ $PAGE->set_context(context_system::instance());
 require_login();
 
 if (!has_capability('local/exam_result_email_notification:admin', context_system::instance())) {
+    $permissionnotfound = get_string('permission_not_found' . 'local_exam_result_email_notification');
     echo $OUTPUT->header();
-    echo "<h3>You do not have permission to view this page.</h3>";
+    echo "<h3>$permissionnotfound</h3>";
     echo $OUTPUT->footer();
     exit;
 }

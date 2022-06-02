@@ -19,11 +19,12 @@ use basic_testcase;
 use local_exam_result_email_notification\task\cron_task;
 
 /**
- * ${PLUGINNAME} file description here.
+ * Cron test.
  *
- * @package     local_exam_result_email_notification
- * @copyright   2022 @Brain Station 23
- * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    local_exam_result_email_notification
+ * @author     Brainstation23
+ * @copyright  2022 Brain Station 23
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class cron_task_test extends basic_testcase {
 

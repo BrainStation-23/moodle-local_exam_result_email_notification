@@ -45,7 +45,7 @@ $context = context_course::instance($courseid);
 if ($action == 'delete') {
     $DB->delete_records('local_email_notifications', ['quizid' => $quizid]);
     $DB->delete_records('local_exam_participants', ['quizid' => $quizid]);
-    redirect("/local/exam_result_email_notification",
+    redirect("$CFG->wwwroot/local/exam_result_email_notification",
         get_string('form:remove_email_scheduling', 'local_exam_result_email_notification'), 10,
         \core\output\notification::NOTIFY_SUCCESS);
 }
@@ -57,7 +57,7 @@ $toform = [];
 
 // Form processing and displaying is done here.
 if ($mform->is_cancelled()) {
-    redirect("/local/exam_result_email_notification", get_string('form:cancel', 'local_exam_result_email_notification'), 10,
+    redirect("$CFG->wwwroot/local/exam_result_email_notification", get_string('form:cancel', 'local_exam_result_email_notification'), 10,
         \core\output\notification::NOTIFY_WARNING);
 } else if ($fromform = $mform->get_data()) {
     // In this case you process validated data. $mform->get_data() returns data posted in form.
@@ -125,12 +125,12 @@ if ($mform->is_cancelled()) {
 
     // Notify for email schedule update.
     if ($edit) {
-        redirect("/local/exam_result_email_notification/index.php",
+        redirect("$CFG->wwwroot/local/exam_result_email_notification/index.php",
             get_string('update_email_scheduling_success',
                 'local_exam_result_email_notification'), 10,
             \core\output\notification::NOTIFY_SUCCESS);
     } else {
-        redirect("/local/exam_result_email_notification/index.php",
+        redirect("$CFG->wwwroot/local/exam_result_email_notification/index.php",
             get_string('add_email_scheduling_success',
                 'local_exam_result_email_notification'), 10,
             \core\output\notification::NOTIFY_SUCCESS);

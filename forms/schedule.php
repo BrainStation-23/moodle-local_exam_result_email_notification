@@ -31,14 +31,14 @@ class schedule_form extends moodleform {
 
     // Add elements to form.
     public function definition() {
-        global $DB;
+        global $DB, $CFG;
         $mform = $this->_form; // Don't forget the underscore!
         $html = '<div class="row">
         <div class="col-md">
         <strong class="pull-left">' . get_string('scheduleform', 'local_exam_result_email_notification') . '</strong>
         </div>
         <div class="col-md">
-        <a class="btn btn-outline-primary pull-right" href="/local/exam_result_email_notification">Back</a>
+        <a class="btn btn-outline-primary pull-right" href="' . $CFG->wwwroot . '/local/exam_result_email_notification">Back</a>
         </div>
         </div>';
 

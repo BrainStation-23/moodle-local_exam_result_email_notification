@@ -69,6 +69,7 @@ $sql = "SELECT {quiz}.id,{quiz}.name,{quiz}.timeopen,{quiz}.timeclose, {quiz}.co
  */
 
 $quizdatalist = $DB->get_records_sql($sql, ['gradepass' => 0.000009, 'hidden' => 0]);
+$noresultfound = get_string('no_result', 'local_exam_result_email_notification');
 
 $data = [];
 
@@ -129,10 +130,14 @@ if ($quizdatalist) {
         $std->total_participants = $enroldata[$quiz->id] ?? 0;
         $std->mail_sent = $totalmaildata[$quiz->id] ?? 0;
         $std->reportemailstatus = $quiz->reportemailstatus;
+        $std->editurl = $CFG->wwwroot
+            . "/local/exam_result_email_notification/scheduleform.php?id=$quiz->id&course_id=$quiz->course";
         $data[] = $std;
     }
 }
 
 echo $OUTPUT->header();
-echo $OUTPUT->render_from_template('local_exam_result_email_notification/searchresults', ['quizzes' => $data]);
+echo $OUTPUT->render_from_template('local_exam_result_email_notification/searchresults',
+    ['quizzes' => $data, 'noresultfound' => $noresultfound]
+);
 echo $OUTPUT->footer();

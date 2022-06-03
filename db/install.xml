@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/exam_result_email_notification/db" VERSION="20220518"
+       COMMENT="XMLDB file for Moodle local/exam_result_email_notification"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+    <TABLES>
+        <TABLE NAME="local_email_notifications"
+               COMMENT="Default comment for local_exam_result_email_notification, please edit me">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+                <FIELD NAME="quizid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="enablesuccessemail" TYPE="char" LENGTH="2" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="successemailsubject" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+                <FIELD NAME="successemailtemplate" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+                <FIELD NAME="successemailtemplateformat" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+                <FIELD NAME="enablefailemail" TYPE="char" LENGTH="2" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="failemailsubject" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+                <FIELD NAME="failemailtemplate" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+                <FIELD NAME="failemailtemplateformat" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+                <FIELD NAME="reportuserid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="reportemailstatus" TYPE="char" LENGTH="2" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="status" TYPE="char" LENGTH="2" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+        </TABLE>
+        <TABLE NAME="local_exam_participants" COMMENT="Default comment for the table, please edit me">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+                <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="quizid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="quizresultstatus" TYPE="char" LENGTH="2" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="mailstatus" TYPE="char" LENGTH="2" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="mailstring" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+                <FIELD NAME="datetime" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+        </TABLE>
+    </TABLES>
+</XMLDB>

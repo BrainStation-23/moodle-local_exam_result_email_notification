@@ -126,7 +126,8 @@ class cron_task extends \core\task\scheduled_task {
 
         mtrace("Processing Exam Scheduling");
 
-        $sql = "SELECT {local_email_notifications}.*,
+        $sql = "SELECT RAND() unid,
+        {local_email_notifications}.*,
         {grade_items}.gradepass,
         {grade_grades}.finalgrade as obtaininggrade,
         {grade_items}.courseid,

@@ -104,7 +104,8 @@ if ($quizdatalist) {
     }
 
     // Total Mail sent.
-    $sql = "SELECT COUNT({local_exam_participants}.id) AS totalmail,
+    $sql = "SELECT RAND() unid, 
+            COUNT({local_exam_participants}.id) AS totalmail,
             {local_exam_participants}.quizid  as quizid
             FROM {local_exam_participants}
             WHERE {local_exam_participants}.mailstatus = '1'

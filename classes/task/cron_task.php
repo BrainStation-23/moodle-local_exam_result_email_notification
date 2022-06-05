@@ -126,30 +126,32 @@ class cron_task extends \core\task\scheduled_task {
 
         mtrace("Processing Exam Scheduling");
 
-        $sql = "SELECT RAND() unid,
+        $concatinationstring = $DB->sql_concat('qa.id', 'COALESCE(qa.userid, 0)', 'COALESCE(qa.attempt, 0)');
+
+        $sql = "SELECT $concatinationstring as unid,
         {local_email_notifications}.*,
         {grade_items}.gradepass,
         {grade_grades}.finalgrade as obtaininggrade,
         {grade_items}.courseid,
-        {quiz_attempts}.userid
-        FROM {quiz_attempts}
+        qa.userid
+        FROM {quiz_attempts} qa
         INNER JOIN {local_email_notifications}
         ON
-        ({local_email_notifications}.quizid={quiz_attempts}.quiz
+        ({local_email_notifications}.quizid=qa.quiz
         AND
         {local_email_notifications}.reportemailstatus=0)
         INNER JOIN {grade_items}
         ON
-        ({grade_items}.iteminstance={quiz_attempts}.quiz
+        ({grade_items}.iteminstance=qa.quiz
         AND {grade_items}.itemmodule = 'quiz')
         INNER JOIN {grade_grades} ON ({grade_grades}.itemid={grade_items}.id
-        AND {grade_grades}.userid={quiz_attempts}.userid)
+        AND {grade_grades}.userid=qa.userid)
         LEFT JOIN {local_exam_participants}
         ON
-        ({local_exam_participants}.userid={quiz_attempts}.userid
+        ({local_exam_participants}.userid=qa.userid
         AND
         {local_exam_participants}.mailstatus is null)
-        WHERE {quiz_attempts}.state = 'finished'";
+        WHERE qa.state = 'finished'";
 
         $quizdatalist = $DB->get_records_sql($sql, null, 0, $this->limit);
 

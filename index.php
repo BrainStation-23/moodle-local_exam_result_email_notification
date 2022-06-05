@@ -104,13 +104,15 @@ if ($quizdatalist) {
     }
 
     // Total Mail sent.
-    $sql = "SELECT RAND() unid, 
-            COUNT({local_exam_participants}.id) AS totalmail,
-            {local_exam_participants}.quizid  as quizid
-            FROM {local_exam_participants}
-            WHERE {local_exam_participants}.mailstatus = '1'
-            AND {local_exam_participants}.quizid $inquizidsql
-            GROUP BY {local_exam_participants}.quizid";
+    $concatinationstring = $DB->sql_concat('lep.id', 'COALESCE(lep.userid, 0)', 'COALESCE(lep.quizid, 0)');
+
+    $sql = "SELECT $concatinationstring as unid, 
+            COUNT(lep.id) AS totalmail,
+            lep.quizid  as quizid
+            FROM {local_exam_participants} lep
+            WHERE lep.mailstatus = '1'
+            AND lep.quizid $inquizidsql
+            GROUP BY lep.quizid";
 
     $totalmail = $DB->get_records_sql($sql, $inparams);
 

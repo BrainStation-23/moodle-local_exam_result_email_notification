@@ -106,7 +106,7 @@ if ($quizdatalist) {
     // Total Mail sent.
     $concatinationstring = $DB->sql_concat('lep.id', 'COALESCE(lep.userid, 0)', 'COALESCE(lep.quizid, 0)');
 
-    $sql = "SELECT $concatinationstring as unid, 
+    $sql = "SELECT $concatinationstring as unid,
             COUNT(lep.id) AS totalmail,
             lep.quizid  as quizid
             FROM {local_exam_participants} lep
